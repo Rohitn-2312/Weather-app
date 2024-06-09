@@ -26,3 +26,11 @@ Start the development server:
 
 ```bash
 npm start
+
+Open your web browser and go to http://localhost:3000 to view the application.
+
+Enter the name of the city in the input field and press Enter or click on the search button to get the weather information for that city.
+
+Click on the °F button to toggle between Fahrenheit and Celsius temperature units.
+
+Click on the Dark Mode button to toggle between dark and light themes.
