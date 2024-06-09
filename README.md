@@ -7,8 +7,18 @@ Live Link: https://weather-app-iota-drab-87.vercel.app/
 - Dynamic background image based on temperature (hot or cold)
 - Dark and light mode toggle
 - Temperature unit toggle (Celsius or Fahrenheit)
-- Display of various weather parameters including min and max temperature, feels like temperature, pressure, humidity, and wind speed
+- Display of various weather parameters including min and max temperature, feels like temperature, pressure, humidity, and wind speed.
 
+## Approach
+The application fetches weather data using the OpenWeatherMap API and dynamically updates the background image based on the temperature. It utilizes React for the frontend development, allowing for easy component-based structuring and state management. The application also supports dynamic theming based on user preference and provides a simple and intuitive interface for weather information retrieval.
+
+## Technology Used
+- React: JavaScript library for building user interfaces
+- OpenWeatherMap API: API used to fetch real-time weather data
+- HTML: Markup language for structuring the web pages
+- CSS: Styling language used to design the user interface
+
+  
 ## Installation
 
 # Clone the repository to your local machine:
