@@ -37,4 +37,5 @@ Click on the °F button to toggle between Fahrenheit and Celsius temperature uni
 Click on the Dark Mode button to toggle between dark and light themes.
 
 # Screenshots
+![ScreemShot 1](src/assets/ss1.png)
 
