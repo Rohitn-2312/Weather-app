@@ -19,3 +19,10 @@ cd weather-app
 
 # Install dependencies:
 npm install
+
+# Usage
+
+Start the development server:
+
+```bash
+npm start
