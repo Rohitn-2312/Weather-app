@@ -38,4 +38,5 @@ Click on the Dark Mode button to toggle between dark and light themes.
 
 # Screenshots
 ![ScreemShot 1](src/assets/ss1.png)
+![ScreemShot 2](src/assets/ss3.png)
 
