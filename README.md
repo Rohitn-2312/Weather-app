@@ -35,3 +35,6 @@ Enter the name of the city in the input field and press Enter or click on the se
 Click on the °F button to toggle between Fahrenheit and Celsius temperature units.
 
 Click on the Dark Mode button to toggle between dark and light themes.
+
+# Screenshots
+
