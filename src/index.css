@@ -1,10 +1,15 @@
 :root {
-  --section-overlay: rgba(0,0,0,0.7);
-  --background-overlay: rgba(0,0,0,0.2);
+  --section-overlay: rgba(0, 0, 0, 0.7);
+  --background-overlay: rgba(0, 0, 0, 0.2);
+  --dark-bg-color: black;
+  --dark-text-color: #ffffff;
+  --dark-section-bg: rgba(255, 255, 255, 0.1);
+  --light-section-bg: rgba(255, 255, 255, 0.8);
+  --light-text-color: #000000;
 }
 
 * {
-  margin:0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -16,79 +21,200 @@
   background-position: center;
   background-size: cover;
 }
+
 .overlay {
   width: 100%;
   height: 100vh;
   background-color: var(--background-overlay);
 }
+
 .container {
   max-width: 800px;
   margin: auto;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   padding: 1rem;
+  border-radius: 10px; /* Added */
 }
 
 /* Top */
 .section {
-  width:100%;
+  width: 100%;
   padding: 1rem;
   border-radius: 0.4rem;
-  color: white;
 }
-.section__inputs, .section__temperature {
+
+.section__inputs,
+.section__temperature,
+.section__descriptions {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--section-overlay);
 }
 
-.section__inputs>input {
-  border: 0.8px solid white;
-  border-radius: 0.4rem;
-  background-color: transparent;
-  color: white;
-  padding: 0.5rem;
-  font-size: 20px;
-  font-weight: 200;
+.section__inputs {
+  margin-bottom: 1rem;
 }
-.section__inputs>input:focus{
-  outline: none;
+
+.section__inputs .input {
+  margin-right: 1rem;
 }
-.section__inputs>button{
-  padding: 10px 50px;
+
+.section__inputs .buttons {
+  display: flex;
+  align-items: center;
+}
+
+.section__inputs .buttons button {
+  padding: 10px 30px;
   border: none;
-  border-radius: 00.4rem;
+  border-radius: 0.4rem;
   font-size: 20px;
   font-weight: 500;
-  background-color: white;
 }
-.section__inputs>button:hover {
-  cursor: pointer;
+
+.section__inputs .buttons button + button {
+  margin-left: 1rem;
+}
+
+.section__inputs > input,
+.section__inputs > button {
+  padding: 10px 30px; 
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Dark Mode */
+.dark-mode .section__inputs,
+.dark-mode .section__temperature,
+.dark-mode .section__descriptions {
+  background-color: var(--dark-section-bg);
+  color: var(--dark-text-color);
+}
+
+.dark-mode .section__temperature {
+  background-color:  rgb(19, 12, 12);/* Dark background for temperature section */
+  color: var(--dark-text-color);
+}
+
+.dark-mode .section__inputs > input,
+.dark-mode .section__inputs > button {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+  border-color: var(--dark-text-color);
+}
+
+.dark-mode .section__inputs > button:hover {
   background-color: lightgray;
 }
-.icon{
+
+/* Light Mode */
+.light-mode .section__inputs,
+.light-mode .section__temperature,
+.light-mode .section__descriptions {
+  background-color: var(--light-section-bg);
+  color: var(--light-text-color);
+}
+
+.light-mode .section__inputs {
+  background-color: var(--light-section-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.light-mode .section__inputs .input {
+  padding: 10px 30px; 
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.light-mode .section__inputs .buttons button {
+  padding: 10px 30px; 
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.light-mode .card {
+  background-color: var(--light-section-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.light-mode .section__temperature {
+  background-color: var(--light-section-bg);
+}
+
+.light-mode .temperature > h1 {
+  font-size: 60px;
+}
+
+.icon {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.icon>h3{
+
+.icon > h3 {
   font-size: 15px;
   font-weight: 200;
   text-transform: capitalize;
 }
-.temperature>h1{
-  font-size: 60px;
+
+.section__descriptions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
 
+.description__card-icon {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 12px;
+}
 
+.description__card-icon > small {
+    text-transform: capitalize;
+}
 
+/* Dark Mode Styles */
+.dark-mode .card {
+    background-color: rgb(19, 12, 12);
+    color: #fff;
+}
 
+/* Light Mode Styles */
+.light-mode .card {
+    background-color: #f0f0f0;
+    color: #000;
+}
 
-
+@media screen and (max-width: 1024px) {
+    .section__descriptions {
+        grid-template-columns: 1fr 1fr;
+    }
+}
